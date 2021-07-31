@@ -1,10 +1,9 @@
 import React from 'react';
-import ListItem from './components/ListItem';
+import IssueList from './components/IssueList';
 
 const App = () => {
   return (
-    <ListItem />
-  )
+    <IssueList owner='microsoft' repo='TypeScript' />  )
 }
 
 export default App;
