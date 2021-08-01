@@ -1,12 +1,12 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import ListItem from "./ListItem"
+import './issue-list.css'
 
 const IssueList = () => {
   const [issues, setIssues] = useState<ApiData[]>([])
 
-  const fetchApiData = async () => 
-  {
+  const fetchApiData = async () => {
     try {
       const [typeScriptApiData, reactApiData, graphqlApiData] = await Promise.all([
         axios.get(`https://api.github.com/repos/microsoft/TypeScript/issues`),
@@ -31,15 +31,15 @@ const IssueList = () => {
 
 
   useEffect(() => {
-      fetchApiData()
+    fetchApiData()
   }, [])
 
   return (
     <div>
-      <h1>Issue List from Github</h1>
-        {issues.map(issue => (
-      <ul key={issue.id}
-      >
+      <h1 className='page-title'>Issue List from Github</h1>
+      {issues.map(issue => (
+        <ul className='items' key={issue.id}
+        >
           <ListItem
             title={issue.title}
             html_url={issue.html_url}
@@ -48,10 +48,11 @@ const IssueList = () => {
             url={issue.url}
             id={issue.id}
           />
-      <button onClick={() => {deletedIssue(issue.id)}}>Delete</button>
-      </ul>
-       ))}
+          <button className='delete-button' onClick={() => { deletedIssue(issue.id) }}>Delete</button>
+        </ul>
+      ))}
     </div>
+
   )
 }
 

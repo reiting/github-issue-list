@@ -1,0 +1,11 @@
+.page-title {
+  text-align: center;
+}
+
+.delete-button {
+  margin-bottom: 5px
+}
+
+.delete-button:hover {
+  background-color: lightblue
+}
