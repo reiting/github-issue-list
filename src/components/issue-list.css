@@ -10,12 +10,8 @@
   background-color: lightblue;
 }
 
-.items {
-  border-bottom: 1px solid black;
-  list-style-type: none;
-}
-
 .items:hover{
   background-color: lightgray;
+  margin-top: 0px;
 
 }
