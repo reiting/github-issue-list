@@ -1,14 +1,15 @@
 
-const ListItem = ({title, html_url, user, repository, repository_url, node_id}: ApiData) => {
+const ListItem = ({title, html_url, user, url}: ApiData) => {
 
-  let repo = repository_url.split('/')
-  console.log('REP', repo)
+  let repo = url.split('/')
+  let repoLink = html_url.split('/issues')[0]
+  
   return (
     <>
    <li>Issue: <a href={html_url}>{title}</a></li>
-   <p>Username: <a href={repository}>{user.login}</a></p>
-   <p>User avatar: <a href={repository}>{user.avatar_url}</a></p>
-   <p>Issue Repository: <a href={repository_url}>{repo[5]}</a></p>
+   <p>Username: <a href={user.avatar_url}>{user.login}</a></p>
+   <p>User avatar: <a href={user.avatar_url}>{user.avatar_url}</a></p>
+   <p>Issue Repository: <a href={repoLink}>{repo[5]}</a></p>
    </>
   )
 }
