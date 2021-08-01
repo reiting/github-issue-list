@@ -6,6 +6,10 @@ import './issue-list.css'
 const IssueList = () => {
   const [issues, setIssues] = useState<ApiData[]>([])
 
+  useEffect(() => {
+    fetchApiData()
+  }, [])
+
   const fetchApiData = async () => {
     try {
       const [typeScriptApiData, reactApiData, graphqlApiData] = await Promise.all([
@@ -29,11 +33,6 @@ const IssueList = () => {
     setIssues(issuesToKeep)
   }
 
-
-  useEffect(() => {
-    fetchApiData()
-  }, [])
-
   return (
     <div>
       <h1 className='page-title'>Issue List from Github</h1>
@@ -52,7 +51,6 @@ const IssueList = () => {
         </ul>
       ))}
     </div>
-
   )
 }
 

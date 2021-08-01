@@ -3,9 +3,19 @@
 }
 
 .delete-button {
-  margin-bottom: 5px
+  margin-bottom: 5px;
 }
 
 .delete-button:hover {
-  background-color: lightblue
+  background-color: lightblue;
+}
+
+.items {
+  border-bottom: 1px solid black;
+  list-style-type: none;
+}
+
+.items:hover{
+  background-color: lightgray;
+
 }
