@@ -3,15 +3,9 @@ interface ApiData {
   html_url: string
   user: User
   userAvatar: string
-  repository: string
-  repository_url: string
-  node_id: string
-}
-
-interface Data {
-  owner: string
-  repo: string
-}
+  url: string
+  id: number
+ }
 
 interface User {
   login: string
