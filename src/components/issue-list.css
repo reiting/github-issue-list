@@ -13,5 +13,11 @@
 .items:hover{
   background-color: lightgray;
   margin-top: 0px;
+}
 
+.items {
+  display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ grid-gap: 1rem;
+ grid-auto-rows: minmax(50px, auto);
 }

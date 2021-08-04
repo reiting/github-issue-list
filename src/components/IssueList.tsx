@@ -36,21 +36,24 @@ const IssueList = () => {
   return (
     <div>
       <h1 className='page-title'>Issue List from Github</h1>
-      {issues.map(issue => (
-        <ul className='items' key={issue.id}
-        >
-          <ListItem
-            title={issue.title}
-            html_url={issue.html_url}
-            user={issue.user}
-            userAvatar={issue.user.avatar_url}
-            url={issue.url}
-            id={issue.id}
-          />
-          <button className='delete-button' onClick={() => { deletedIssue(issue.id) }}>Delete</button>
-        </ul>
-      ))}
+      <div className='items'>
+        {issues.map(issue => (
+          <ul key={issue.id}
+          >
+            <ListItem
+              title={issue.title}
+              html_url={issue.html_url}
+              user={issue.user}
+              userAvatar={issue.user.avatar_url}
+              url={issue.url}
+              id={issue.id}
+            />
+            <button className='delete-button' onClick={() => { deletedIssue(issue.id) }}>Delete</button>
+          </ul>
+        ))}
+      </div>
     </div>
+
   )
 }
 
