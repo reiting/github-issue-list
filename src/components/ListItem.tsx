@@ -1,4 +1,4 @@
-import './issue-list.css'
+import './list-item.css'
 
 
 const ListItem = ({ title, html_url, user, url }: ApiData) => {

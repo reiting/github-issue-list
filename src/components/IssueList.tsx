@@ -38,7 +38,7 @@ const IssueList = () => {
       <h1 className='page-title'>Issue List from Github</h1>
       <div className='items'>
         {issues.map(issue => (
-          <ul key={issue.id}
+          <ul className='unordered-list' key={issue.id}
           >
             <ListItem
               title={issue.title}
